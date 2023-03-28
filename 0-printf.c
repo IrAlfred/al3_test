@@ -37,6 +37,13 @@ int _printf(const char * const format, ...) {
 			++count;
 		}
 	}
+	ch = '\n';
+	write(1, &ch, 1);
+	count++;
 	va_end(args);
 	return count;
+}
+int main(void)
+{
+	_printf("Je suis %s J'ai eu %c voici le pourcentage (%%)", "Alfred", 'M');
 }
